@@ -2,8 +2,6 @@ package com.startwith.nothing;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import java.awt.*;
-
 import static com.startwith.nothing.Board.TILE_HEIGHT;
 import static com.startwith.nothing.Board.TILE_WIDTH;
 

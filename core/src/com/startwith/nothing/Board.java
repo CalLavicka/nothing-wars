@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 
 public class Board {
     public Tile[][] tiles;
@@ -55,7 +54,6 @@ public class Board {
             br.close();
         } catch(Exception e) {
             e.printStackTrace();
-            System.exit(-1);
         }
     }
 
