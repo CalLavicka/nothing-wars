@@ -136,6 +136,7 @@ public class NothingGame extends ApplicationAdapter {
 				|| board.tiles[selected.x][selected.y].type == Board.Tile.Type.PCITY)) {
 					board.tiles[selected.x][selected.y].type = Board.Tile.Type.ECITY;
 					enemySpawn.add(new Point(selected.x, selected.y));
+					playerSpawn.remove(new Point(selected.x, selected.y));
 					selected.canAct = false;
 				} else if (!attacking.isEmpty()) {
 					Point p = attacking.iterator().next();
@@ -235,6 +236,7 @@ public class NothingGame extends ApplicationAdapter {
 								(t.type == Board.Tile.Type.NCITY || t.type == Board.Tile.Type.ECITY)) {
 							t.type = Board.Tile.Type.PCITY;
 							playerSpawn.add(new Point(selected.x, selected.y));
+							enemySpawn.remove(new Point(selected.x, selected.y));
 							selected.canAct = false;
 							movement.clear();
 							attack.clear();

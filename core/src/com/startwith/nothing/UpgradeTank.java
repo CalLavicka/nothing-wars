@@ -31,9 +31,13 @@ public class UpgradeTank extends Tank {
         super.damage(amt);
         if (health <= 0) {
             if (enemy) {
-                NothingGame.enemySpawn.add(owningLocation);
+                if (NothingGame.board.tiles[owningLocation.x][owningLocation.y].type == Board.Tile.Type.ECITY) {
+                    NothingGame.enemySpawn.add(owningLocation);
+                }
             } else {
-                NothingGame.playerSpawn.add(owningLocation);
+                if (NothingGame.board.tiles[owningLocation.x][owningLocation.y].type == Board.Tile.Type.PCITY) {
+                    NothingGame.playerSpawn.add(owningLocation);
+                }
             }
         }
     }
