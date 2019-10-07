@@ -173,6 +173,8 @@ public class NothingGame extends ApplicationAdapter {
 			int mx = Gdx.input.getX();
 			int my = Gdx.input.getY();
 			Vector3 mouse = camera.unproject(new Vector3(mx, my, 0));
+			if (mouse.x < 0) mouse.x -= Board.TILE_WIDTH;
+			if (mouse.y < 0) mouse.y -= Board.TILE_HEIGHT;
 			mx = (int) mouse.x;
 			my = (int) mouse.y;
 			int bx = mx / Board.TILE_WIDTH;
